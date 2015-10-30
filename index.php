@@ -10,9 +10,6 @@
 	<?php require_once('includes/header.html') ?>
 	<div class="slider">
 		<?php require_once('includes/slider.html'); ?>
-		<div class="news-bar">
-			
-		</div>
 	</div>
 	<div class="g-nav">
 		<?php require_once('includes/navbar.html'); ?>
