@@ -1,0 +1,12 @@
+@media screen and (max-width: 769px) {
+	.gallery-item-container {
+		width: 160px;
+		height: 200px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.gallery-item-container {
+		width: 270px;
+		height: 280px;
+	}
+}
