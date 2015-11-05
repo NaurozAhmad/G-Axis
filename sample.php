@@ -9,7 +9,10 @@
 <body>
 	<?php require_once('includes/header.html') ?>
 	<div class="slider">
-		<?php require_once('includes/slider.html'); ?>
+		<div class="banner">
+			<img src="images/slider/slider-1.jpg" alt="">
+			<?php require_once('includes/news.html') ?>
+		</div>
 		<div class="news-bar">
 			
 		</div>

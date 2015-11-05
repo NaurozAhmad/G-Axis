@@ -9,9 +9,8 @@
 <body>
 	<?php require_once('includes/header.html') ?>
 	<div class="slider">
-		<?php require_once('includes/slider.html'); ?>
-		<div class="news-bar">
-			
+		<div class="banner" style="background-image: url(images/slider/slider-2.jpg)">
+			<?php require_once('includes/news.html') ?>
 		</div>
 	</div>
 	<div class="g-nav">
