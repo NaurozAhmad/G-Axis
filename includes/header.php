@@ -20,13 +20,20 @@
 <div class="new-product-outer" style="">
 	<button onclick="openNewProduct()" class="btn btn-default btn-toggle"><i class="fa fa-plus"></i></button>
 	<div class="row new-product-inner" style="">
-		<div class="col-sm-6">
-			<img src="images/bulb.jpg" alt="">
+		  <?php 
+            require_once('connection.php');
+            $sql_random = "SELECT * FROM products p ORDER BY p.product_id DESC LIMIT 1";
+            $result_random = mysqli_query($conn, $sql_random);
+            $row_random = mysqli_fetch_assoc($result_random);
+         ?>
+        <div class="col-sm-6">
+			<img src="admin/uploads/<?php echo $row_random['product_image']; ?>" alt="">
 		</div>
+      
 		<div class="col-sm-6">
-			<h4>Lorem ipsum dolor</h4>
-			<p> sit amet.</p>
-			<a href="product-details.php" class="btn btn-success">Go to Details</a>
+			<h4><?php echo $row_random['product_name']; ?></h4>
+			<p> Warranty : <?php echo $row_random['feature_warranty']; ?></p>
+			<a href="product-details.php?pid=<?php echo $row_random['product_id']; ?>#news-div" class="btn btn-success">Go to Details</a>
 		</div>
 	</div>
 </div>
