@@ -50,6 +50,7 @@
     color: #FFF;
     background-color: rgba(0,0,0,0.6);
     border-top: 4px solid #0159C7;
+    width: 100%;
 }
 
 .news-slider-header {

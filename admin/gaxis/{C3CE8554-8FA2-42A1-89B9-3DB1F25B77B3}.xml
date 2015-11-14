@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration date="2015/11/10" author="e.World Technology Ltd.">
+<project id="{C3CE8554-8FA2-42A1-89B9-3DB1F25B77B3}" file="C:\Users\Ahmar Mahmood\Documents\PHPMaker\Projects\gaxis.pmp" name="gaxis" product="PHPMaker" version="12.0" datetime="2015/11/10 19:43:36" languagefolder="phplang" userlevel="-2,&quot;Anonymous&quot;,0;">
+<table id="category" name="category" caption="Category" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1"/>
+<table id="news" name="news" caption="news" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1"/>
+<table id="products" name="products" caption="Products" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1"/>
+<table id="sub_category" name="sub_category" caption="Sub Category" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1"/>
+</project></configuration>

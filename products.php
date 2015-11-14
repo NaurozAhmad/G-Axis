@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 <body id="products">
-	<?php require_once('includes/header.html') ?>
+	<?php require_once('includes/header.php') ?>
 	<div class="slider">
 		<div class="banner" style="background-image: url(images/slider/slider-1.jpg)">
-			<?php require_once('includes/news.html') ?>
+			<?php require_once('includes/news.php') ?>
 		</div>
 	</div>
 	<div class="g-nav">
-		<?php require_once('includes/navbar.html'); ?>
+		<?php require_once('includes/navbar.php'); ?>
 	</div>
 	<div class="content">
 		<div class="g-container">
@@ -25,15 +25,15 @@
 			
 			<div class="row">
 				<div class="col-md-3">
-					<?php require_once('includes/categories-navigator.html') ?>
+					<?php require_once('includes/categories-navigator.php') ?>
 				</div>
 				<div class="col-md-9">
-					<?php require_once('includes/products-gallery.html') ?>
+					<?php require_once('includes/products-gallery.php') ?>
 				</div>
 			</div>
 		</div>
 	</div>
-	<?php require_once('includes/footer.html') ?>
+	<?php require_once('includes/footer.php') ?>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
