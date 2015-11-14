@@ -50,7 +50,7 @@
                         // output data of each row
                             while($row_scategory = mysqli_fetch_assoc($result_scategory)) {?> 
            <div class="col-sm-4 gallery-item">
-            <a href="products.php?sid=<?php echo $row_scategory['scat_id']; ?>">
+            <a href="products.php?sid=<?php echo $row_scategory['scat_id']; ?>#news-div">
 	            <div class="gallery-item-container">
 	        	    <div class="product-img" style="background-image: url('admin/uploads/<?php echo $row_scategory['scat_picture']; ?>')"></div>
 	        	    <p class="item-name"><?php echo $row_scategory['scat_name']; ?></p>
@@ -66,7 +66,6 @@
 	</div>
 	<?php require_once('includes/footer.php') ?>
 
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>

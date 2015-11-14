@@ -35,7 +35,7 @@ $result_cat_nav = mysqli_query($conn, $sql_cat_nav);
                                 <ul>
                                     <?php while($row_scat_nav = mysqli_fetch_assoc($result_scat_nav)) {?>
                                         <li>
-                                            <a href="products.php?sid=<?php echo $row_scat_nav['scat_id']; ?>">
+                                            <a href="products.php?sid=<?php echo $row_scat_nav['scat_id']; ?>#news-div">
                                                 <?php echo $row_scat_nav['scat_name']; ?>
                                             </a>
                                         </li>

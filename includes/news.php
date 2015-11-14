@@ -1,4 +1,4 @@
-<div class="news-slider">
+<div class="news-slider" id="news-div">
 	<div class="news-slider-header">
 		<div class="news-slider-header-container">Latest News</div>
 	</div>

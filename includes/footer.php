@@ -30,3 +30,20 @@
         </div>
     </div>
 </div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function openNewProduct () {	
+		if($('.new-product-outer').hasClass('open')) {
+			$('.new-product-outer').removeClass('open');
+			$('.new-product-outer .fa').addClass('fa-plus');
+			$('.new-product-outer .fa').removeClass('fa-minus');
+		}
+		else {
+			$('.new-product-outer').addClass('open');
+			$('.new-product-outer .fa').removeClass('fa-plus');
+			$('.new-product-outer .fa').addClass('fa-minus');
+		}
+	}
+	setTimeout(openNewProduct, 5000);
+</script>

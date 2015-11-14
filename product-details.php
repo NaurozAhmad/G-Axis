@@ -27,11 +27,12 @@ $result_products = mysqli_query($conn, $sql_products);
 	<div class="content">
 		<div class="g-container">
 			<div class="row">
-			<?php 
-if (mysqli_num_rows($result_products) > 0) {
-// output data of each row
-while($row_products = mysqli_fetch_assoc($result_products)) {?>
-				<h3><?php echo $row_products['product_name']; ?></h3>
+				<?php 
+					if (mysqli_num_rows($result_products) > 0) {
+					// output data of each row
+					while($row_products = mysqli_fetch_assoc($result_products)) {
+				?>
+				<h3 id="product-heading"><?php echo $row_products['product_name']; ?></h3>
 				<p><?php echo $row_products['product_description']; ?></p>
 			</div>
 			
@@ -115,8 +116,7 @@ while($row_products = mysqli_fetch_assoc($result_products)) {?>
 	</div>
 	<?php require_once('includes/footer.php') ?>
 
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	
 	<script>
 		$('.panel-title a').click(function (event) {
 			$('.panel-title a').children('.fa').addClass('fa-plus-square');

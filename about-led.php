@@ -52,7 +52,6 @@
 	</div>
 	<?php require_once('includes/footer.php') ?>
 
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>

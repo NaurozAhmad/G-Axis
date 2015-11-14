@@ -29,7 +29,7 @@
                         // output data of each row
                         	while($row_scategory = mysqli_fetch_assoc($result_scategory)) {?>
 
-				<h3><?php echo $row_scategory['scat_name']; ?></h3>
+				<h3 id="subcat-heading"><?php echo $row_scategory['scat_name']; ?></h3>
 				<p><?php echo $row_scategory['scat_description']; ?></p>
 			</div>
 			      <?php   }    }        ?>
@@ -45,8 +45,7 @@
 	</div>
 	<?php require_once('includes/footer.php') ?>
 
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	
 	<script>
 		$('.panel-title a').click(function (event) {
 			if ($(this).hasClass('collapsed')) {

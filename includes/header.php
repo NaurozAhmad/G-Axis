@@ -30,17 +30,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	function openNewProduct () {	
-		if($('.new-product-outer').hasClass('open')) {
-			$('.new-product-outer').removeClass('open');
-			$('.new-product-outer .fa').addClass('fa-plus');
-			$('.new-product-outer .fa').removeClass('fa-minus');
-		}
-		else {
-			$('.new-product-outer').addClass('open');
-			$('.new-product-outer .fa').removeClass('fa-plus');
-			$('.new-product-outer .fa').addClass('fa-minus');
-		}
-	}
-</script>
