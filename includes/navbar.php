@@ -2,9 +2,7 @@
 <?php 
 $sql_cat = "SELECT * FROM category";
 $result = mysqli_query($conn, $sql_cat);
-?>
-
- 
+?> 
 <nav class="navbar navbar-default">
     <div class="container-fluid g-navbar-container">
         <div class="navbar-header">
@@ -22,17 +20,15 @@ $result = mysqli_query($conn, $sql_cat);
         	    <li class="dropdown">
         	        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="about-led.php">About LED</a></li>
-                        <li><a href="about-solar.php">About Solar</a></li>
-                        <?php 
+                    <?php 
                         if (mysqli_num_rows($result) > 0) {
                         // output data of each row
                             while($row = mysqli_fetch_assoc($result)) {?> 
-                            <li><a href="#"><?php echo $row['category_name'];?></a></li> 
+                            <li><a href="category.php?id=<?php echo $row['category_id']; ?>"><?php echo $row['category_name'];?></a></li> 
                             <?php  
                         }
                     } 
-                    mysqli_close($conn); ?>
+                    ?>
 
                 </ul>
         	    </li>
