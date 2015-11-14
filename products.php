@@ -16,13 +16,23 @@
 	<div class="g-nav">
 		<?php require_once('includes/navbar.php'); ?>
 	</div>
+	<?php if (isset($_GET['sid'])) {
+		$sid=$_GET['sid'];
+		$sql_scategory = "select * from sub_category s where s.scat_id = $sid";
+		$result_scategory = mysqli_query($conn, $sql_scategory);
+	} ?>
 	<div class="content">
 		<div class="g-container">
 			<div class="row">
-				<h3>SELECTED ITEM MODELS</h3>
-				<p>The exponential growth of LED technology in the lighting industry has helped develop lights that are getting cheaper by time and a quality that is being improved on regular basis. The constant development in this segment has lead to a large number of light design types being produced in mass to suit the day to day needs. This includes spotlights, candle lights, tube lights, down lights, strip lights, retrofit bulbs, facade, pool, outdoor & solar lights, all of which come in a large variety of fittings, colours, materials etc.</p>
+ <?php 
+                        if (mysqli_num_rows($result_scategory) > 0) {
+                        // output data of each row
+                        	while($row_scategory = mysqli_fetch_assoc($result_scategory)) {?>
+
+				<h3><?php echo $row_scategory['scat_name']; ?></h3>
+				<p><?php echo $row_scategory['scat_description']; ?></p>
 			</div>
-			
+			      <?php   }    }        ?>
 			<div class="row">
 				<div class="col-md-3">
 					<?php require_once('includes/categories-navigator.php') ?>
@@ -40,10 +50,14 @@
 	<script>
 		$('.panel-title a').click(function (event) {
 			if ($(this).hasClass('collapsed')) {
+				$('.panel-title a').children('.fa').removeClass('fa-minus-square');
+				$('.panel-title a').children('.fa').addClass('fa-plus-square');
 				$(this).children('.fa').removeClass('fa-plus-square');
 				$(this).children('.fa').addClass('fa-minus-square');
 			}
 			else {
+				/*$('.panel-title a').children('.fa').removeClass('fa-plus-square');
+				$('.panel-title a').children('.fa').addClass('fa-minus-square');*/
 				$(this).children('.fa').addClass('fa-plus-square');
 				$(this).children('.fa').removeClass('fa-minus-square');
 			}

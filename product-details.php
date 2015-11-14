@@ -16,11 +16,23 @@
 	<div class="g-nav">
 		<?php require_once('includes/navbar.php'); ?>
 	</div>
+	  <?php 
+	  if(isset($_GET['pid']))
+	  {
+	  	$pid = $_GET['pid'];
+$sql_products = "select * from products p where p.product_id=$pid";
+$result_products = mysqli_query($conn, $sql_products);
+}
+?>
 	<div class="content">
 		<div class="g-container">
 			<div class="row">
-				<h3>SELECTED ITEM MODELS</h3>
-				<p>The exponential growth of LED technology in the lighting industry has helped develop lights that are getting cheaper by time and a quality that is being improved on regular basis. The constant development in this segment has lead to a large number of light design types being produced in mass to suit the day to day needs. This includes spotlights, candle lights, tube lights, down lights, strip lights, retrofit bulbs, facade, pool, outdoor & solar lights, all of which come in a large variety of fittings, colours, materials etc.</p>
+			<?php 
+if (mysqli_num_rows($result_products) > 0) {
+// output data of each row
+while($row_products = mysqli_fetch_assoc($result_products)) {?>
+				<h3><?php echo $row_products['product_name']; ?></h3>
+				<p><?php echo $row_products['product_description']; ?></p>
 			</div>
 			
 			<div class="row" style="margin-bottom: 100px;">
@@ -28,9 +40,9 @@
 					<?php require_once('includes/categories-navigator.php') ?>
 				</div>
 				<div style="margin-top: 20px;" class="col-md-4">
-					<img class="details-img" src="images/bulb.jpg" alt="">
+					<img class="details-img" src="admin/uploads/<?php echo $row_products['product_image'];  ?>" alt="">
 					<div style="background-color:#FFF">
-						<img class="details-img" src="images/bulb-details.gif" alt="">
+						<img class="details-img" src="admin/uploads/<?php echo $row_products['product_secimage'];  ?>" alt="">
 					</div>
 				</div>
 				<div style="margin-top: 20px;" class="col-md-5">
@@ -42,58 +54,59 @@
 							<table class="table">
 								<tr>
 									<td>LED Type</td>
-									<td>SMD</td>
+									<td><?php echo $row_products['feature_ledtype']; ?></td>
 								</tr>
 								<tr>
 									<td>Power</td>
-									<td>12W</td>
+									<td><?php echo $row_products['feature_power']; ?></td>
 								</tr>
 								<tr>
 									<td>Lumens</td>
-									<td>1080</td>
+									<td><?php echo $row_products['feature_lumen']; ?></td>
 								</tr>
 								<tr>
 									<td>View Angle</td>
-									<td>60<sup>o</sup></td>
+									<td><?php echo $row_products['feature_viewangle']; ?><sup>o</sup></td>
 								</tr>
 								<tr>
 									<td>CRI</td>
-									<td>z80</td>
+									<td><?php echo $row_products['feature_cri']; ?></td>
 								</tr>
 								<tr>
 									<td>IP Rating</td>
-									<td>44</td>
+									<td><?php echo $row_products['feature_iprating']; ?></td>
 								</tr>
 								<tr>
 									<td>Color Temperature</td>
-									<td>3000-6500K</td>
+									<td><?php echo $row_products['feature_colortemp']; ?></td>
 								</tr>
 								<tr>
 									<td>Body</td>
-									<td>Die-Cast Aluminium</td>
+									<td><?php echo $row_products['feature_body']; ?></td>
 								</tr>
 								<tr>
 									<td>Cutout Size</td>
-									<td>125mm</td>
+									<td><?php echo $row_products['feature_cutoutsize']; ?></td>
 								</tr>
 								<tr>
 									<td>Available Colors</td>
-									<td>White</td>
+									<td><?php echo $row_products['feature_colors']; ?></td>
 								</tr>
 								<tr>
 									<td>Dimmable</td>
-									<td>Yes</td>
+									<td><?php echo $row_products['feature_dimmable']; ?></td>
 								</tr>
 								<tr>
 									<td>Warranty</td>
-									<td>3 Years</td>
+									<td><?php echo $row_products['feature_warranty']; ?></td>
 								</tr>
 								<tr>
 									<td>Application</td>
-									<td>Rooms, Malls, Offices</td>
+									<td><?php echo $row_products['feature_application']; ?></td>
 								</tr>
 							</table>
 						</div>
+						<?php   }    }        ?>
 					</div>
 					<button class="btn btn-lg btn-primary" style="float: right; border-radius: 0px; border: none; margin-right: 7px;">Get Quote</button>
 				</div>
