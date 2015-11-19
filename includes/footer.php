@@ -45,5 +45,5 @@
 			$('.new-product-outer .fa').addClass('fa-minus');
 		}
 	}
-	setTimeout(openNewProduct, 5000);
+	setTimeout(openNewProduct, 10000);
 </script>

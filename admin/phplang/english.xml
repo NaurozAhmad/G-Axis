@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ew-language date="2015/11/10" version="12.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
+<ew-language date="2015/11/19" version="12.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
 	<locale>
 		<phrase id="locale" value=""/><!-- *** system locale for this language -->
 		<phrase id="use_system_locale" value="1"/><!-- *** change to "0" to disable system locale and use the following settings *** -->
@@ -465,9 +465,15 @@
 <table id="products"><phrase id="tblcaption" value="Products"/>
 <field id="product_id"><phrase id="fldcaption" value="product id"/>
 </field>
+<field id="category_id"><phrase id="fldcaption" value="Select Category"/>
+</field>
 <field id="scat_id"><phrase id="fldcaption" value="Select Sub Category"/>
 </field>
 <field id="product_name"><phrase id="fldcaption" value="Product Name"/>
+</field>
+<field id="product_image"><phrase id="fldcaption" value="Main Image"/>
+</field>
+<field id="product_secimage"><phrase id="fldcaption" value="Secondary Image"/>
 </field>
 <field id="product_description"><phrase id="fldcaption" value="Product Description"/>
 </field>
@@ -496,12 +502,6 @@
 <field id="feature_warranty"><phrase id="fldcaption" value="Warranty"/>
 </field>
 <field id="feature_application"><phrase id="fldcaption" value="Application"/>
-</field>
-<field id="category_id"><phrase id="fldcaption" value="Select Category"/>
-</field>
-<field id="product_image"><phrase id="fldcaption" value="Main Image"/>
-</field>
-<field id="product_secimage"><phrase id="fldcaption" value="Secondary Image"/>
 </field>
 </table>
 <table id="sub_category"><phrase id="tblcaption" value="Sub Category"/>

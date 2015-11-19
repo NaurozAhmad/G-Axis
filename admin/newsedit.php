@@ -913,34 +913,31 @@ $news_edit->ShowMessage();
 		<div class="col-sm-10"><div<?php echo $news->news_date->CellAttributes() ?>>
 <span id="el_news_news_date">
 <input type="text" data-table="news" data-field="x_news_date" data-format="5" name="x_news_date" id="x_news_date" placeholder="<?php echo ew_HtmlEncode($news->news_date->getPlaceHolder()) ?>" value="<?php echo $news->news_date->EditValue ?>"<?php echo $news->news_date->EditAttributes() ?>>
+<?php if (!$news->news_date->ReadOnly && !$news->news_date->Disabled && !isset($news->news_date->EditAttrs["readonly"]) && !isset($news->news_date->EditAttrs["disabled"])) { ?>
+<script type="text/javascript">
+ew_CreateCalendar("fnewsedit", "x_news_date", "%Y/%m/%d");
+</script>
+<?php } ?>
 </span>
 <?php echo $news->news_date->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($news->news_title->Visible) { // news_title ?>
 	<div id="r_news_title" class="form-group">
-		<label id="elh_news_news_title" class="col-sm-2 control-label ewLabel"><?php echo $news->news_title->FldCaption() ?><?php echo $Language->Phrase("FieldRequiredIndicator") ?></label>
+		<label id="elh_news_news_title" for="x_news_title" class="col-sm-2 control-label ewLabel"><?php echo $news->news_title->FldCaption() ?><?php echo $Language->Phrase("FieldRequiredIndicator") ?></label>
 		<div class="col-sm-10"><div<?php echo $news->news_title->CellAttributes() ?>>
 <span id="el_news_news_title">
-<?php ew_AppendClass($news->news_title->EditAttrs["class"], "editor"); ?>
 <textarea data-table="news" data-field="x_news_title" name="x_news_title" id="x_news_title" cols="35" rows="4" placeholder="<?php echo ew_HtmlEncode($news->news_title->getPlaceHolder()) ?>"<?php echo $news->news_title->EditAttributes() ?>><?php echo $news->news_title->EditValue ?></textarea>
-<script type="text/javascript">
-ew_CreateEditor("fnewsedit", "x_news_title", 35, 4, <?php echo ($news->news_title->ReadOnly || FALSE) ? "true" : "false" ?>);
-</script>
 </span>
 <?php echo $news->news_title->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($news->news_description->Visible) { // news_description ?>
 	<div id="r_news_description" class="form-group">
-		<label id="elh_news_news_description" class="col-sm-2 control-label ewLabel"><?php echo $news->news_description->FldCaption() ?><?php echo $Language->Phrase("FieldRequiredIndicator") ?></label>
+		<label id="elh_news_news_description" for="x_news_description" class="col-sm-2 control-label ewLabel"><?php echo $news->news_description->FldCaption() ?><?php echo $Language->Phrase("FieldRequiredIndicator") ?></label>
 		<div class="col-sm-10"><div<?php echo $news->news_description->CellAttributes() ?>>
 <span id="el_news_news_description">
-<?php ew_AppendClass($news->news_description->EditAttrs["class"], "editor"); ?>
 <textarea data-table="news" data-field="x_news_description" name="x_news_description" id="x_news_description" cols="35" rows="4" placeholder="<?php echo ew_HtmlEncode($news->news_description->getPlaceHolder()) ?>"<?php echo $news->news_description->EditAttributes() ?>><?php echo $news->news_description->EditValue ?></textarea>
-<script type="text/javascript">
-ew_CreateEditor("fnewsedit", "x_news_description", 35, 4, <?php echo ($news->news_description->ReadOnly || FALSE) ? "true" : "false" ?>);
-</script>
 </span>
 <?php echo $news->news_description->CustomMsg ?></div></div>
 	</div>
