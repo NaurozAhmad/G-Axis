@@ -62,5 +62,6 @@
 			}
 		})
 	</script>
+	<?php require_once("livechat.php") ?>
 </body>
 </html>

@@ -131,5 +131,6 @@ $result_products = mysqli_query($conn, $sql_products);
 			}
 		})
 	</script>
+	<?php require_once("livechat.php") ?>
 </body>
 </html>
